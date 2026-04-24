@@ -24,81 +24,59 @@ export default function Home() {
           Spencer Cheng
         </h1>
         <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-          Software engineer and visual artist. I build thoughtful digital experiences and create meaningful art.
+          software engineer in san francisco. i build things at rootly ai labs, and spend the rest of my time on two wheels or in the darkroom.
         </p>
       </section>
 
       {/* About Section */}
-      <section id="about" className="space-y-6">
-        <h2 className="text-3xl font-bold">About</h2>
-        <div className="prose prose-gray dark:prose-invert max-w-none">
-          <p className="text-lg leading-relaxed">
-            I&#39;m a software engineer with a passion for creating thoughtful digital experiences.
-            Currently building tools and systems that help teams work more effectively.
-          </p>
-          <p className="text-lg leading-relaxed">
-            Outside of code, I express creativity through visual art — illustrations, paintings,
-            and digital artwork that explore themes of technology, nature, and human connection.
-          </p>
-          <p className="text-lg leading-relaxed">
-            When I&#39;m not coding or creating art, you&#39;ll find me hiking, reading about design,
-            or experimenting with new creative techniques.
-          </p>
-        </div>
+      <section id="about" className="max-w-3xl space-y-5">
+        <p className="text-xl font-medium leading-relaxed tracking-tight">
+          i&#39;m a software engineer in san francisco. i build things at rootly ai labs, mostly around on-call and incident tooling.
+        </p>
+        <p className="text-xl leading-relaxed text-gray-600 dark:text-gray-400">
+          off the clock i&#39;m usually on my bike, in the darkroom, or somewhere between. i like quiet craft — the kind where the work is better because you paid attention.
+        </p>
       </section>
 
       {/* Projects Section */}
       <section id="projects" className="space-y-8">
-        <h2 className="text-3xl font-bold">Engineering Projects</h2>
-        <div className="grid gap-8">
-          {projects.map((project) => (
-            <div key={project.id} className="border border-gray-200 dark:border-gray-800 rounded-lg p-6 space-y-4">
-              <div className="flex items-start justify-between">
-                <h3 className="text-xl font-semibold">{project.title}</h3>
-                <div className="flex space-x-3">
-                  {project.links.github && (
-                    <a
-                      href={project.links.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
-                    >
-                      GitHub
-                    </a>
-                  )}
-                  {project.links.live && (
-                    <a
-                      href={project.links.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
-                    >
-                      Live Demo
-                    </a>
-                  )}
-                </div>
-              </div>
+        <div className="flex items-center gap-4">
+          <span className="text-sm font-mono text-gray-400">01</span>
+          <h2 className="text-2xl font-bold lowercase">work</h2>
+        </div>
 
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                {project.description}
-              </p>
+        <div className="divide-y divide-gray-200 dark:divide-gray-800">
+          {projects.map((project, i) => (
+            <div
+              key={project.id}
+              className="group grid grid-cols-[20px_1fr_auto_30px] items-center gap-5 py-7 transition-all duration-200 hover:px-3 cursor-pointer"
+            >
+              {/* Color dot */}
+              <div className={`w-3 h-3 rounded-full ${
+                i === 0 ? 'bg-purple-500' :
+                i === 1 ? 'bg-blue-900' :
+                i === 2 ? 'bg-green-600' : 'bg-orange-500'
+              }`} />
 
-              {project.outcome && (
-                <p className="text-sm font-medium text-green-600 dark:text-green-400">
-                  {project.outcome}
+              {/* Content */}
+              <div className="min-w-0">
+                <h3 className="text-2xl font-bold tracking-tight leading-tight">
+                  {project.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed mt-1.5 max-w-2xl">
+                  {project.description}
                 </p>
-              )}
-
-              <div className="flex flex-wrap gap-2">
-                {project.technologies.map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-3 py-1 text-xs bg-gray-100 dark:bg-gray-800 rounded-full"
-                  >
-                    {tech}
-                  </span>
-                ))}
               </div>
+
+              {/* Meta */}
+              <div className="text-right font-mono text-xs text-gray-500 whitespace-nowrap">
+                <div>{project.outcome}</div>
+              </div>
+
+              {/* Arrow */}
+              <span className="text-gray-400 text-xl transform rotate-[-45deg] transition-transform group-hover:translate-x-1.5 group-hover:rotate-[-45deg]">
+                →
+              </span>
             </div>
           ))}
         </div>
@@ -117,41 +95,44 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Hobbies */}
-      <section className="space-y-6">
-        <h2 className="text-3xl font-bold">Other Interests</h2>
-        <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-          When I&#39;m not coding or creating art, I enjoy hiking local trails, reading about design and psychology,
-          experimenting with photography, and discovering new coffee shops around the city.
-        </p>
-      </section>
-
       {/* Contact Section */}
-      <section id="contact" className="space-y-6">
-        <h2 className="text-3xl font-bold">Let&#39;s Connect</h2>
-        <div className="flex space-x-6">
+      <section id="contact" className="space-y-8 pt-16">
+        <div className="flex items-center gap-4">
+          <span className="text-sm font-mono text-gray-400">03</span>
+          <h2 className="text-2xl font-bold lowercase">let&#39;s work together</h2>
+        </div>
+
+        <p className="text-xl leading-relaxed max-w-2xl">
+          interested in collaborating? always open to interesting projects and conversations.
+        </p>
+
+        <div className="flex flex-wrap gap-6">
           <a
             href="mailto:spencer.cheng@rootly.com"
-            className="text-lg text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+            className="text-lg hover:text-purple-500 transition-colors"
           >
-            Email
+            spencer.cheng@rootly.com
           </a>
           <a
-            href="https://github.com/spencercheng"
+            href="https://github.com/spencerhcheng"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-lg text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+            className="text-lg hover:text-purple-500 transition-colors"
           >
-            GitHub
+            github
           </a>
           <a
-            href="https://linkedin.com/in/spencercheng"
+            href="https://linkedin.com/in/spcheng"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-lg text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+            className="text-lg hover:text-purple-500 transition-colors"
           >
-            LinkedIn
+            linkedin
           </a>
+        </div>
+
+        <div className="pt-16 pb-8 text-center text-sm text-gray-500">
+          made with care in san francisco 🚲
         </div>
       </section>
     </div>
