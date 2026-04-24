@@ -33,7 +33,7 @@ export default function Home() {
         <h2 className="text-3xl font-bold">About</h2>
         <div className="prose prose-gray dark:prose-invert max-w-none">
           <p className="text-lg leading-relaxed">
-            I'm a software engineer with a passion for creating thoughtful digital experiences.
+            I&#39;m a software engineer with a passion for creating thoughtful digital experiences.
             Currently building tools and systems that help teams work more effectively.
           </p>
           <p className="text-lg leading-relaxed">
@@ -41,7 +41,7 @@ export default function Home() {
             and digital artwork that explore themes of technology, nature, and human connection.
           </p>
           <p className="text-lg leading-relaxed">
-            When I'm not coding or creating art, you'll find me hiking, reading about design,
+            When I&#39;m not coding or creating art, you&#39;ll find me hiking, reading about design,
             or experimenting with new creative techniques.
           </p>
         </div>
@@ -121,14 +121,14 @@ export default function Home() {
       <section className="space-y-6">
         <h2 className="text-3xl font-bold">Other Interests</h2>
         <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-          When I'm not coding or creating art, I enjoy hiking local trails, reading about design and psychology,
+          When I&#39;m not coding or creating art, I enjoy hiking local trails, reading about design and psychology,
           experimenting with photography, and discovering new coffee shops around the city.
         </p>
       </section>
 
       {/* Contact Section */}
       <section id="contact" className="space-y-6">
-        <h2 className="text-3xl font-bold">Let's Connect</h2>
+        <h2 className="text-3xl font-bold">Let&#39;s Connect</h2>
         <div className="flex space-x-6">
           <a
             href="mailto:spencer.cheng@rootly.com"
